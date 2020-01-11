@@ -1,0 +1,57 @@
+/* 设置全局样式 */
+/* 页面高度100%;默认字体28upx,默认行高1.8,背景颜色 */
+page {
+	height: 100%;
+	font-size: 28upx;
+	line-height: 1.8;
+	background: #ffffff;
+}
+/*图片宽度100%*/
+img {
+	width: 100%;
+}
+image{
+	/*防止闪一下*/
+	will-change: transform;
+}
+/*主色调*/
+.main-bg-color {
+	background: #fd6801;
+}
+.main-bg-hover-color {
+	background: rgba(253,104,1,0.85) !important;
+}
+.main-text-color {
+	color: #fd6801;
+}
+.main-border-color {
+	border-color: #f1f1f1;
+}
+
+/*scroll-view*/
+.scroll-view {
+	width: 100%;
+	white-space: nowrap;
+}
+.scroll-view-item {
+	display: inline-block;
+}
+
+body{
+	--primary:#007bff;
+	--secondrary:#6c757d;
+	--success:#28a745;
+	--danger:#dc3545;
+	--warning:#ffc107;
+	--info:#17a2b8;
+	--light:#f8f9fa;
+	--dark:#343a40;
+	--muted:#6c757d;
+	--white:#fff;
+	--borderColor:#dee2e6;
+	--lightmuted:#B2b2b2;
+}
+
+.border-success {
+	border-color: val(--success) !important;
+}

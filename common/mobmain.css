@@ -1,0 +1,59 @@
+/*移动端基础样式库(可改成按字母排序)*/
+/*布局*/
+.d-flex{display: flex;}
+.d-i-b {display: inline-block;}
+.d-b{display: block;}
+
+.flex-1 {flex: 1;}
+.j-center{justify-content: center;}
+.j-sb{justify-content: space-between;}
+.a-center{align-items: center;}
+.flex-column{flex-direction: column;}
+.f-center {align-items: center;    justify-content: center;}
+.f-wap{flex-wrap: wrap;}
+.p-f{position: fixed;}
+
+.b-0 {bottom: 0;}
+.t-0 {top: 0;}
+.l-0 {left: 0;}
+.r-0 {right: 0;}
+
+.t-white {color: white;}
+.bg-white{background-color: white;}
+
+.bd-top {border-top: 2upx solid #eee;}
+.bd-bottom-main-color{border-bottom: 2upx solid #fd6801;}
+
+.bd{border:1px solid;}
+
+.l-h-1{    line-height: 1;}
+.t-center {text-align: center;}
+
+/*定位*/
+.p-a {position: absolute;}
+.p-1{padding: 1upx;}
+.p-2{padding: 2upx;}
+.m-l-1{margin-left: 1upx;}
+.px-10 {padding: 0 10upx}
+
+/* 对齐 */
+.a-self-e{align-self: flex-end;}
+.a-self-s{align-self: flex-start;}
+
+/*宽高*/
+.w-50 {width: 50%;}
+.h-50 {width: 50%;}
+
+/*字体*/
+.f-weight{font-weight: bold;}
+.line-through{text-decoration: line-through;}
+
+
+/*栅格布局20分*/
+.col-4 {
+	/* width: 125upx; */
+	width: 20%;
+}
+
+.m-20 {margin: 20upx;}
+.py-20{padding:20upx 0;}

@@ -1,0 +1,102 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "uni-app",
+				"app-plus":{
+					"scrollIndicator":"none",
+					"titleNView":{
+						"searchInput":{
+							"align":"left",
+							"backgroundColor":"#f7f7f7",
+							"borderRadius":"4px",
+							"disabled":true,
+							"placeholder":"输入搜索",
+							"placeholderColor":"#cccccc"
+							
+						},
+						"buttons":[
+							{
+								"color":"#989898",
+								"colorPressed":"#fd6801",
+								"float":"left",
+								"fontSize":"22px",
+								"fontSrc":"/static/font/iconfont.tff",
+								"text":"\ue62b"
+							},{
+								"color":"#989898",
+								"colorPressed":"#fd6801",
+								"float":"right",
+								"fontSize":"22px",
+								"fontSrc":"/static/font/iconfont.tff",
+								"text":"\ue621"
+							}
+						]
+					}
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/usercenter/usercenter",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/class/class",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/cart/cart",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "在线商城",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	// 底部导航栏
+	"tabBar": {
+		"color": "#878787",
+		"selectedColor":"#fd6801",
+		"borderStyle":"black",
+		"backgroundColor": "white",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"iconPath":"static/images/index.png",
+				"selectedIconPath":"static/images/index-selected.png",
+				"text":"首页"
+			},
+			{
+				"pagePath":"pages/class/class",
+				"iconPath":"static/images/class.png",
+				"selectedIconPath":"static/images/class-selected.png",
+				"text":"分类"
+			},
+			{
+				"pagePath":"pages/cart/cart",
+				"iconPath":"static/images/cart.png",
+				"selectedIconPath":"static/images/cart-selected.png",
+				"text":"购物车"
+			},
+			{
+				"pagePath":"pages/usercenter/usercenter",
+				"iconPath":"static/images/user.png",
+				"selectedIconPath":"static/images/user-selected.png",
+				"text":"个人中心"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

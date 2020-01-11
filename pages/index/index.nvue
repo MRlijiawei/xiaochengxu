@@ -1,0 +1,20 @@
+<template>
+	<div>
+		<!-- 轮播图 -->
+		<slider auto-play :interval="2000" class="slider"></slider>
+		<text>12321</text>
+	</div>
+</template>
+
+<script>
+	export default {
+		
+		created() {
+			uni.onNavigationBarButtonTap()
+		}
+	}
+</script>
+
+<style>
+
+</style>
