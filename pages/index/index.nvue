@@ -1,20 +1,86 @@
 <template>
 	<div>
+		<div class="scroller">
+			<scroller class="scroller flex-row" show-scrollbar="false" scroll-direction="horizontal">
+				<div v-for="(item,index) in tabs" :key="index" class="scroller-item" @click="changeTab(index)">
+					<text class="scroller-inner-text" :class="index===selectedTab?'scroller-selected':''">{{item.text}}</text>
+				</div>
+			</scroller>
+		</div>
 		<!-- 轮播图 -->
-		<slider auto-play :interval="2000" class="slider"></slider>
-		<text>12321</text>
+		<appSlider :swipers="sliderSwipers"></appSlider>
+		<text>123212321</text>
 	</div>
 </template>
 
 <script>
+	import appSlider from '@/components/nvue/app-slider.nvue'
 	export default {
-		
+		data() {
+			return {
+				selectedTab:0,
+				sliderSwipers: [
+					{
+						src: '/static/images/img1.jpg'
+					},
+					{
+						src: '/static/images/img2.jpg'
+					},
+					{
+						src: '/static/images/img3.jpg'
+					}
+				],
+				tabs: [
+					{
+						text: '小学小学小学小学小学'
+					},
+					{
+						text: '中学中学中学中学中学'
+					},
+					{
+						text: '大学大学大学大学大学'
+					}
+				]
+			}
+		},
+		components:{
+			appSlider
+		},
 		created() {
-			uni.onNavigationBarButtonTap()
+			// uni.onNavigationBarButtonTap()
+			// 监听当前窗口显示
+			const curWV = plus.webview.currentWebview()
+			curWV.addEventListener('show', e=>{
+				console.log('indShow')
+			})
+		},
+		methods:{
+			changeTab(index) {
+				this.selectedTab = index
+			}
 		}
 	}
 </script>
-
+<!-- <style src=''></style>需要单独的UI库 -->
 <style>
-
+.scroller{
+	/* width:750px; */
+	height: 75px;
+}
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+.scroller-item {
+	height: 75px;
+	padding: 0 15px;
+}
+.scroller-inner-text {
+	height: 75px;
+	line-height: 75px;
+}
+.scroller-selected {
+	border-color: #09BB07;
+	border-bottom-width: 5px;
+}
 </style>

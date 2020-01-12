@@ -14,11 +14,11 @@
 
 <style>
 	/*每个页面公共css */
-	@import "/common/animate.css";
+	/* @import "/common/animate.css";
 	@import "/common/common.css";
 	@import "/common/icon.css";
-	@import "/common/uni.css";
+	@import "/common/uni.css"; */
 	/*UI基础样式库*/
-	@import "/common/main.css";
-	@import "/common/mobmain.css";
+	/* @import "/common/main.css";
+	@import "/common/mobmain.css"; */
 </style>
