@@ -53,5 +53,9 @@ body{
 }
 
 .border-success {
-	border-color: val(--success) !important;
+	border-color: var(--success) !important;
+}
+
+.font-muted{
+	color: var(--muted);
 }

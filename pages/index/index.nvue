@@ -53,6 +53,11 @@
 			curWV.addEventListener('show', e=>{
 				console.log('indShow')
 			})
+			/* uni.onNavigationBarSearchInputClicked(()=>{
+				uni.navigateTo({
+					url:'../search/search'
+				})
+			}) */
 		},
 		methods:{
 			changeTab(index) {

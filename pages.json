@@ -49,6 +49,64 @@
             "path" : "pages/cart/cart",
             "style" : {}
         }
+        ,{
+            "path" : "pages/search/search",
+            "style": {
+            	"navigationBarTitleText": "搜索",
+            	"app-plus":{
+            		"scrollIndicator":"none",
+            		"titleNView":{
+            			"searchInput":{
+            				"align":"left",
+            				"backgroundColor":"#f7f7f7",
+            				"borderRadius":"4px",
+            				"disabled":false,
+            				"placeholder":"输入搜索",
+            				"placeholderColor":"#cccccc"
+            				
+            			},
+            			"buttons":[
+            				{
+            					"color":"#989898",
+            					"colorPressed":"#fd6801",
+            					"float":"right",
+            					"fontSize":"16px",
+            					"text":"搜索"
+            				}
+            			]
+            		}
+            	}
+            }
+        }
+        ,{
+            "path" : "pages/searchList/searchList",
+            "style": {
+            	"navigationBarTitleText": "搜索",
+            	"app-plus":{
+            		"scrollIndicator":"none",
+            		"titleNView":{
+            			"searchInput":{
+            				"align":"left",
+            				"backgroundColor":"#f7f7f7",
+            				"borderRadius":"4px",
+            				"disabled":false,
+            				"placeholder":"输入搜索",
+            				"placeholderColor":"#cccccc"
+            				
+            			},
+            			"buttons":[
+            				{
+            					"color":"#989898",
+            					"colorPressed":"#fd6801",
+            					"float":"right",
+            					"fontSize":"16px",
+            					"text":"搜索"
+            				}
+            			]
+            		}
+            	}
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

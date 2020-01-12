@@ -22,9 +22,12 @@
 .bg-white{background-color: white;}
 
 .bd-top {border-top: 2upx solid #eee;}
+.bd-bottom{border-bottom: 2upx solid #eee;}
 .bd-bottom-main-color{border-bottom: 2upx solid #fd6801;}
 
-.bd{border:1px solid;}
+.bd{border:1upx solid;}
+.bd-2{border:2upx solid;}
+.bd-5{border:5upx solid;}
 
 .l-h-1{    line-height: 1;}
 .t-center {text-align: center;}
@@ -33,8 +36,14 @@
 .p-a {position: absolute;}
 .p-1{padding: 1upx;}
 .p-2{padding: 2upx;}
+
+/* 缩进 */
 .m-l-1{margin-left: 1upx;}
-.px-10 {padding: 0 10upx}
+.px-10 {padding-left: 10upx;padding-right: 10upx;}
+.py-10{padding-top:10upx;padding-bottom: 10upx;}
+.m-20 {margin: 20upx;}
+.py-20{padding-top:20upx;padding-bottom: 20upx;}
+.line-h-0{line-height: 0;}
 
 /* 对齐 */
 .a-self-e{align-self: flex-end;}
@@ -54,6 +63,3 @@
 	/* width: 125upx; */
 	width: 20%;
 }
-
-.m-20 {margin: 20upx;}
-.py-20{padding:20upx 0;}

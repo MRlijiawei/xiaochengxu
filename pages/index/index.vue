@@ -177,6 +177,11 @@
 				]
 			}
 		},
+		onNavigationBarSearchInputClicked() {
+			uni.navigateTo({
+				url:'../search/search'
+			})
+		},
 		onLoad() {
 			// 获取可视区域高度
 			uni.getSystemInfo({
@@ -184,10 +189,15 @@
 					this.scrollH = res.windowHeight - uni.upx2px(82)
 				}
 			})
-			this._init()
+			this._initPage()
+			/* uni.onNavigationBarSearchInputClicked(()=>{
+				uni.navigateTo({
+					url:'../search/search'
+				})
+			}) */
 		},
 		methods: {
-			_init() {
+			_initPage() {
 				
 			},
 			changeTab(index) {
