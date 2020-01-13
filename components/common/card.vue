@@ -1,9 +1,9 @@
 <template>
-	<view class="uni-card">
+	<view><!-- class="uni-card" -->
 		<!-- 标题 -->
-		<view class="p-2 bottom-border main-border-color" v-if="headTitle">
+		<view class="p-2 main-border-color" :class="{'bottom-border':titleBorder}" v-if="headTitle">
 			<slot name="title">
-				<text class="f20 f-weight">{{headTitle}}</text>
+				<text class="f20" :class="{'f-weight':titleBold}">{{headTitle}}</text>
 			</slot>
 		</view>
 		<!-- body -->
@@ -17,8 +17,22 @@
 <script>
 	export default {
 		props:{
-			headTitle: String,
-			bodyImg: String
+			headTitle: {
+				type: String,
+				default: ''
+			},
+			bodyImg: {
+				type: String,
+				default: ''
+			},
+			titleBold: {
+				type: Boolean,
+				default: true
+			},
+			titleBorder: {
+				type: Boolean,
+				default: true
+			}
 		}
 	}
 </script>
