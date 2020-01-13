@@ -1,5 +1,5 @@
 {
-    "name" : "SmartDemo-1.0.0",
+    "name" : "SmartDemo-1.0.2",
     "appid" : "__UNI__999BE42",
     "description" : "",
     "versionName" : "1.0.0",
@@ -9,7 +9,7 @@
     "app-plus" : {
         "usingComponents" : true,
         // "nvueCompiler" : "weex",
-		// "renderer":"native",
+        // "renderer":"native",
         "nvueCompiler" : "uni-app",
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,

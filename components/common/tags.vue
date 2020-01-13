@@ -1,6 +1,11 @@
 <template>
 	<view class="px-10 mb10">
+		<!-- #ifdef MP-WEIXIN -->
+		<view class="px-10 py-10 d-i-b m10" :class="{'bd-5':!noboder}" v-for="(tag,index) in tags" :key="index">{{tag.name}}</view>
+		<!-- #endif -->
+		<!-- #ifndef MP-WEIXIN -->
 		<view class="px-10 py-10 d-i-b m10" :class="{'bd-5':!noboder}" :style="getStyle()" v-for="(tag,index) in tags" :key="index">{{tag.name}}</view>
+		<!-- #endif -->
 	</view>
 </template>
 
