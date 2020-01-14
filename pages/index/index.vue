@@ -198,7 +198,12 @@
 		},
 		methods: {
 			_initPage() {
-				
+				uni.showLoading({
+				    title: '加载中。。。'  
+				})
+				setTimeout(()=>{
+					uni.hideLoading()
+				}, 500)
 			},
 			changeTab(index) {
 				if (this.tabIndex === index) return

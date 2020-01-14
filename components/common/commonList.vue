@@ -1,6 +1,6 @@
 <template>
 	<view class="uni-flex uni-row j-sb">
-		<block v-for="(item,index) in searchList" :key="index">
+		<block v-for="(item,index) in searchList" :key="index" @tap="gotoDetail(item)">
 			<view style="width:372.5upx;overflow: hidden;">
 				<image :src="item.img" mode="widthFix" lazy-load></image>
 				<view class="p-2">
@@ -24,6 +24,14 @@
 		},
 		props:{
 			searchList: Array
+		},
+		methods:{
+			gotoDetail(item) {
+				uni.navigateTo({
+					url:'/pages/detail/detail?id=' + (item.id||''),
+					// 参数
+				})
+			}
 		}
 	}
 </script>

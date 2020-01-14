@@ -32,24 +32,19 @@
 			</view>
 		</uni-drawer>
 		<!-- 列表 -->
-		<view class="d-flex p10 bd-bottom">
-			<view class="col-8">
-				<image src="../../static/images/card1.jpg" mode="widthFix w-100"></image>
-			</view>
-			<view class="col-12">
-				123123
-			</view>
-		</view>
+		<good-list :goods="goodList"></good-list>
 	</view>
 </template>
 
 <script>
 	import uniDrawer from '@/components/uni/uni-drawer/uni-drawer.vue'
 	import radioGp from '@/components/common/radioGroup.vue'
+	import goodList from '@/components/goodList/goodList.vue'
 	export default {
 		components: {
 			uniDrawer,
-			radioGp
+			radioGp,
+			goodList
 		},
 		data() {
 			return {
@@ -86,8 +81,67 @@
 						name: '批发',
 						checked: false
 					}
+				],
+				goodList: [
+					{
+						id: '1',
+						title: '蓝牙耳机',
+						img: '/static/images/sqlist1.webp',
+						tags: ['时尚','简约','可爱','唯美','蓝牙5.0'],
+						price: 250,
+						saleNum: 234,
+						rate: 95
+					},
+					{
+						id: '2',
+						title: '平衡车',
+						img: '/static/images/sqlist2.jpg',
+						tags: ['时@尚','简@约','可@爱','唯@美','蓝@牙5.0'],
+						price: 250,
+						saleNum: 234,
+						rate: 95
+					},
+					{
+						id: '3',
+						title: '阿姆斯特朗回旋加速喷气式阿姆斯特朗炮',
+						img: '/static/images/sqlist3.jpg',
+						tags: ['阿姆斯特朗','回旋','加速','喷气式','阿姆斯特朗炮'],
+						price: 200000,
+						saleNum: 2554,
+						rate: 95
+					},
+					{
+						id: '4',
+						title: '智能音响',
+						img: '/static/images/sqlist4.jpg',
+						tags: ['时尚','简约','可爱','唯美','蓝牙5.0'],
+						price: 200,
+						saleNum: 214,
+						rate: 93.56
+					},
+					{
+						id: '5',
+						title: '降噪耳机',
+						img: '/static/images/sqlist5.jpg',
+						tags: ['时尚','简约','可爱','唯美','蓝牙5.0'],
+						price: 200,
+						saleNum: 224,
+						rate: 94
+					},
+					{
+						id: '6',
+						title: '海景别墅',
+						img: '/static/images/sqlist6.jpg',
+						tags: ['时尚','简约','可爱','唯美','蓝牙5.0'],
+						price: 25000000,
+						saleNum: 34,
+						rate: 85
+					}
 				]
 			}
+		},
+		onLoad() {
+			this.queryList()
 		},
 		methods: {
 			changeFilter(index) {
@@ -116,16 +170,21 @@
 				this.showRight = false
 			},
 			queryList(param) {
-				
+				uni.showLoading({
+				    title: '加载中。。。'  
+				})
+				setTimeout(()=>{
+					uni.hideLoading()
+				}, 500)
 			}
 		}
 	}
 </script>
 
 <style>
-.actived {
+/* .actived {
 	background-color: #fce0d5;
 	color: #Eb7320;
 	border: 1upx solid #Eb7320;
-}
+} */
 </style>
