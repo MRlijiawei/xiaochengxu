@@ -33,6 +33,7 @@
 		</uni-drawer>
 		<!-- 列表 -->
 		<good-list :goods="goodList"></good-list>
+		<upMore>{{umText}}</upMore>
 	</view>
 </template>
 
@@ -40,14 +41,17 @@
 	import uniDrawer from '@/components/uni/uni-drawer/uni-drawer.vue'
 	import radioGp from '@/components/common/radioGroup.vue'
 	import goodList from '@/components/goodList/goodList.vue'
+	import upMore from '@/components/common/upMore.vue'
 	export default {
 		components: {
 			uniDrawer,
 			radioGp,
-			goodList
+			goodList,
+			upMore
 		},
 		data() {
 			return {
+				umText: '上拉加载更多',
 				showRight: false,
 				filterIndex: 0,
 				filterList: [
@@ -142,6 +146,23 @@
 		},
 		onLoad() {
 			this.queryList()
+		},
+		// 下拉加载更多
+		onReachBottom() {
+			/* uni.showLoading({
+			    title: '加载中。。。'  
+			})
+			setTimeout(()=>{
+				uni.hideLoading()
+			}, 500) */
+			// TODO 可优化，第一次加载时不直接加载更多
+			if(this.umText === '加载中') return
+			this.umText = '加载中'
+			setTimeout(()=>{
+				this.umText = '上拉加载更多'
+			}, 500)
+			this.goodList = [...this.goodList, ...[this.goodList[Math.floor(Math.random()*this.goodList.length)]], ...[this.goodList[Math.floor(Math.random()*this.goodList.length)]]]
+			console.log(this.goodList);
 		},
 		methods: {
 			changeFilter(index) {

@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<!-- #ifdef MP -->
+		<text @tap="gotoSearch">导航栏</text>
+		<!-- #endif -->
 		<!-- 选项卡 -->
 		<scroll-view scroll-x="true" class="scroll-view" style="height: 80rpx;" :scroll-into-view="scrollInto" scroll-with-animation show-scrollbar="false">
 			<view class="scroll-view-item" style="height: 80rpx;line-height: 80rpx;"
@@ -168,19 +171,17 @@
 						pprice: '121'
 					},
 					{
-						img: '/static/images/card1.jpg',
-						title: 'Num1',
+						img: '/static/images/right2.jpg',
+						title: 'Num2',
 						desc:'xasdxsd',
-						oprice: '212',
+						oprice: '222',
 						pprice: '121'
 					}
 				]
 			}
 		},
 		onNavigationBarSearchInputClicked() {
-			uni.navigateTo({
-				url:'../search/search'
-			})
+			this.gotoSearch()
 		},
 		onLoad() {
 			// 获取可视区域高度
@@ -196,6 +197,18 @@
 				})
 			}) */
 		},
+		// 上拉onReachBottom
+		// 下拉刷新
+		onPullDownRefresh() {
+			uni.showLoading({
+			    title: '加载中。。。'  
+			})
+			setTimeout(()=>{
+				this.searchList = this.searchList.concat(this.searchList)
+				uni.stopPullDownRefresh()
+				uni.hideLoading()
+			}, 500)
+		},
 		methods: {
 			_initPage() {
 				uni.showLoading({
@@ -204,6 +217,11 @@
 				setTimeout(()=>{
 					uni.hideLoading()
 				}, 500)
+			},
+			gotoSearch() {
+				uni.navigateTo({
+					url:'../search/search'
+				})
 			},
 			changeTab(index) {
 				if (this.tabIndex === index) return

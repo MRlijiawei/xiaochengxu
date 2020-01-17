@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<!-- #ifdef MP -->
+		<text @tap="gotoSearchList">搜索框</text>
+		<!-- #endif -->
 		<mainCard headTitle="热门搜索" bodyImg="/static/images/katong1.jpg"></mainCard>
 		<!-- 多色按钮 -->
 		<tags :tags="dataTags"></tags>
@@ -35,14 +38,22 @@
 			}
 		},
 		methods: {
-		},
-		onNavigationBarButtonTap(e) {
-			console.log(e);
-			if (e.index === 0) {
+			// 兼容小程序
+			gotoSearchList(e) {
+				console.log(e);
+				// #ifndef MP
+				if (e.index !== 0) {
+					return false
+				}
+				// #endif
 				uni.navigateTo({
 					url:'../searchList/searchList'
 				})
+				
 			}
+		},
+		onNavigationBarButtonTap(e) {
+			this.gotoSearchList(e)
 		}
 	}
 </script>

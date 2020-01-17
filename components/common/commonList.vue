@@ -1,5 +1,5 @@
 <template>
-	<view class="uni-flex uni-row j-sb">
+	<view class="uni-flex uni-row j-sb f-wap">
 		<block v-for="(item,index) in searchList" :key="index" @tap="gotoDetail(item)">
 			<view style="width:372.5upx;overflow: hidden;">
 				<image :src="item.img" mode="widthFix" lazy-load></image>

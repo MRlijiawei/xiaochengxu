@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<loadingPlus v-if="beforeReady"></loadingPlus>
 		<swiperComp :res="good.imgs" height="750" preview></swiperComp>
 		<view class="px-20">
 			<view class="f20 f-weight">{{good.title}}</view>
@@ -36,6 +37,8 @@
 	import price from '@/components/common/price.vue'
 	import uniListItem from '@/components/uni/uni-list-item/uni-list-item.vue'
 	import wxParse from '@/components/uni/uParse/src/wxParse.vue'
+	import loading from '@/common/mixin/loading.js'
+	
 	var htmlInner = '<div class="s-pic-content">'+
 		'<ul class="s-news-content-imgs clearfix">'+'<li class="item-img-wrap">'+
 		'<a href="https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_10316883135909038921%22%7D&amp;n_type=0&amp;p_from=1" target="_blank" data-click="LOG_LINK">'+
@@ -46,6 +49,7 @@
 		'<img class="s-news-img" src="../../static/images/sqlist1.webp" height="119" width="179"> </a></li></ul></div>'
 
 	export default {
+		mixins:[loading],
 		components:{
 			swiperComp,
 			price,

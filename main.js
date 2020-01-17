@@ -5,11 +5,13 @@ import devider from '@/components/common/devider.vue'
 import card from '@/components/common/card.vue'
 import fontLoading from '@/components/common/fontLoading.vue'
 import cssLoading from '@/components/common/cssLoading.vue'
+import loadingPlus from '@/common/mixin/loading-plus.vue'
 
 Vue.component('devider', devider)
 Vue.component('card', card)
 Vue.component('fontLoading', fontLoading)
 Vue.component('cssLoading', cssLoading)
+Vue.component('loadingPlus', loadingPlus)
 
 Vue.config.productionTip = false
 

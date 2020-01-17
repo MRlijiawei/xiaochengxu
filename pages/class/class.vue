@@ -1,7 +1,7 @@
 <template>
 	<view class="d-flex bd-top" style="height: 100%;box-sizing: border-box;">
 		<!-- <fontLoading v-show="loadingShow"></fontLoading> -->
-		<cssLoading v-show="loadingShow"></cssLoading>
+		<cssLoading v-if="loadingShow"></cssLoading>
 		<scroll-view scroll-y style="flex: 1;height: 100%;" class="bd-right" :scroll-top="leftTop" id="leftScroller" scroll-with-animation @scroll="scrollLeft">
 			<view>
 				<view v-for="(cls,i) in classes" :key="i" class="bd-bottom py-20 t-center left-scroller-items"
@@ -59,7 +59,7 @@
 				setTimeout(()=>{
 					// uni.hideLoading()
 					this.loadingShow = false
-				}, 500)
+				}, 5000)
 				for(let i=0;i<20;i++) {
 					this.classes.push({
 						name: `分类${i+1}`
